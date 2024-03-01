@@ -3,6 +3,12 @@ import math
 import random
 import sys
 
+## Add constants to modify color of terminal stdout
+WRONG = "\033[31m"
+CLOSE = "\033[103m"
+CORRECT = "\033[32m"
+RESET = "\033[39m"
+
 def main():
 
     # Test usage
@@ -22,6 +28,8 @@ def main():
     print(get_current_game_word(wordsize))
 
     print(get_user_guess(wordsize))
+
+    print(WRONG+"BRAND"+RESET)
 
 def get_current_game_word(wordsize):
     """Reads in list of 5 or 6 letter words based on user's wordsize argument
