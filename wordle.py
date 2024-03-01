@@ -21,6 +21,8 @@ def main():
     
     print(get_current_game_word(wordsize))
 
+    print(get_user_guess(wordsize))
+
 def get_current_game_word(wordsize):
     """Reads in list of 5 or 6 letter words based on user's wordsize argument
     and returns one word to be the current game word"""
@@ -34,6 +36,26 @@ def get_current_game_word(wordsize):
     current_game_word = word_bank[random_index]
 
     return current_game_word
+
+def get_user_guess(wordsize):
+
+    user_guess = ""
+
+    while len(user_guess) != wordsize or not check_correct_guess_format(user_guess):
+        user_guess = input(f"Enter a {wordsize}-letter guess: ")
+
+    return user_guess
+
+def check_correct_guess_format(guess):
+
+    for letter in guess:
+        if not letter.isalpha():
+            return False
+        
+    return True
+
+
+
 
 
 
